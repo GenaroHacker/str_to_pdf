@@ -26,25 +26,25 @@ page_3 = [
 
 pages = [page_1, page_2, page_3]
 
-c = canvas.Canvas("grey_lines_text.pdf", pagesize=A4)
 
 
 
 
 
-for page in pages:
-    c.setFont('Ubuntu', 16)
-    c.setLineWidth(.3)
-    c.setStrokeColorRGB(0.2,0.5,0.3)
-    c.line(3*cm, 0*cm, 3*cm, 29.7*cm)
+def pages_to_pdf(pages):
+    c = canvas.Canvas("grey_lines_text.pdf", pagesize=A4)
+    for page in pages:
+        c.setFont('Ubuntu', 16)
+        c.setLineWidth(.3)
+        c.setStrokeColorRGB(0.2,0.5,0.3)
+        c.line(3*cm, 0*cm, 3*cm, 29.7*cm)
+        for i in range(32):
+            c.line(0*cm, 2.2*cm+i*0.8*cm, 21*cm, 2.2*cm+i*0.8*cm)
+        for block in page:
+            for line in block:
+                c.drawString(3.2*cm, 1.45*cm+i*0.8*cm, line)
+                i += -1
+        c.showPage()
+    c.save()
 
-    for i in range(32):
-        c.line(0*cm, 2.2*cm+i*0.8*cm, 21*cm, 2.2*cm+i*0.8*cm)
-    for block in page:
-        for line in block:
-            c.drawString(3.2*cm, 1.45*cm+i*0.8*cm, line)
-            i += -1
-    
-    c.showPage()
-
-c.save()
+pages_to_pdf(pages)
