@@ -31,8 +31,8 @@ if False:
 
 
 
-def pages_to_pdf(pages):
-    c = canvas.Canvas("grey_lines_text.pdf", pagesize=A4)
+def pages_to_pdf(pages,output_file_name):
+    c = canvas.Canvas(output_file_name, pagesize=A4)
     for page in pages:
         c.setFont('Ubuntu', 16)
         c.setLineWidth(.3)
