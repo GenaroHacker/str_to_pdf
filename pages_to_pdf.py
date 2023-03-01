@@ -46,5 +46,3 @@ def pages_to_pdf(pages):
                 i += -1
         c.showPage()
     c.save()
-
-pages_to_pdf(pages)
