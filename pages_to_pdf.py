@@ -59,7 +59,7 @@ def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=1):
             #filter
             filtered_list_of_tuples = []
             for tuple in list_of_tuples:
-                if tuple[2] == random_tag:
+                if tuple[1] == random_tag:
                     filtered_list_of_tuples.append(tuple)
             print(filtered_list_of_tuples)
             #choice
@@ -68,7 +68,7 @@ def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=1):
                 print(random_tuple)
                 #split
                 from str_to_block import split_string
-                block = split_string(random_tuple[1],600)
+                block = split_string(random_tuple[2],600)
             page.append(block)
         pages.append(page)
     return pages
