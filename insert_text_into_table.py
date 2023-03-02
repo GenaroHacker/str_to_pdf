@@ -9,10 +9,10 @@ def split_text_into_lines(text):
     return lines
 
 
-def insert_text_into_table(text,tag):
+def insert_text_into_table(text,tag,base,table):
     blocks = split_text_into_lines(text)
     for block in blocks:
       try:
-        insert_record("base_blocks","INSERT INTO table_blocks VALUES (NULL,'"+tag+"','"+block+"')")
+        insert_record(base,"INSERT INTO "+base+" VALUES (NULL,'"+tag+"','"+block+"')")
       except:
         print("Error inserting record")
