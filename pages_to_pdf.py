@@ -47,12 +47,12 @@ def pages_to_pdf(pages,output_file_name):
         c.showPage()
     c.save()
     
-def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=3):
+def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=1):
     from random import choice
     pages = []
     for i in range(amount_of_pages):
         page = []
-        for j in range(3):
+        for j in range(6):
             block = []
             #choice
             random_tag = choice(tags)
