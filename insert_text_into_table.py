@@ -13,4 +13,7 @@ def insert_text_into_table(text,tag,base,table):
     from sql_core import insert_record
     blocks = split_text_into_lines(text)
     for block in blocks:
+        #filter all the " and ' from the text
+        block = block.replace("'","")
+        block = block.replace('"',"")
         insert_record(base,"INSERT INTO "+table+" VALUES (NULL,'"+tag+"','"+block+"')")
