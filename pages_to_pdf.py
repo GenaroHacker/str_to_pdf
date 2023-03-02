@@ -67,6 +67,7 @@ def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=3):
                 random_tuple = choice(filtered_list_of_tuples)
                 print(random_tuple)
                 #split
+                from str_to_block import split_string
                 block = split_string(random_tuple[1],600)
             page.append(block)
         pages.append(page)
