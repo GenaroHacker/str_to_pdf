@@ -10,6 +10,7 @@ def split_text_into_lines(text):
 
 
 def insert_text_into_table(text,tag,base,table):
+    from sql_core import insert_record
     blocks = split_text_into_lines(text)
     for block in blocks:
         insert_record(base,"INSERT INTO "+table+" VALUES (NULL,'"+tag+"','"+block+"')")
