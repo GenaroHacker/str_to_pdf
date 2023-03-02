@@ -17,3 +17,4 @@ def insert_text_into_table(text,tag,base,table):
         block = block.replace("'","")
         block = block.replace('"',"")
         insert_record(base,"INSERT INTO "+table+" VALUES (NULL,'"+tag+"','"+block+"')")
+    print("Inserted "+str(len(blocks))+" blocks into table "+table+" with tag "+tag)
