@@ -46,3 +46,26 @@ def pages_to_pdf(pages,output_file_name):
                 i += -1
         c.showPage()
     c.save()
+    
+def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=3):
+    from random import choice
+    pages = []
+    for i in range(amount_of_pages):
+        page = []
+        for j in range(3):
+            block = []
+            #choice
+            random_tag = choice(tags)
+            #filter
+            filtered_list_of_tuples = []
+            for tuple in list_of_tuples:
+                if tuple[1] == random_tag:
+                    filtered_list_of_tuples.append(tuple)
+            #choice
+            if len(filtered_list_of_tuples) > 0:
+                random_tuple = choice(filtered_list_of_tuples)
+                #split
+                block = split_string(random_tuple[2],600)
+            page.append(block)
+        pages.append(page)
+    return pages
