@@ -1,4 +1,19 @@
 To use just run the colab notebook main.ipynb and run all cells.
+#@title Playground
+INPUT_TEXT = """
+
+achieve act direction advance apply focus evaluate assign help attack automate reward drive build calculate change choose clarify classify train collaborate communicate compete fulfill compose
+
+"""
+
+dict_to_pdf({
+    "input_text": INPUT_TEXT,
+    "file name": "OUTPUT.pdf",
+    "amount of pages": 4,
+    "empty space": 0.8
+})
+
+
 The important functions are:
 
 Function: insert_text_into_table
