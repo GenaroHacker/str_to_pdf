@@ -1,1 +1,1 @@
-To use just prepare run the colab notebook called main.ipynb and test the playground
+RUN the colab notebook called MAIN.IPYNB and test the Playground.
