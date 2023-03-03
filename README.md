@@ -1,3 +1,6 @@
+To start just run the colab notebook.
+The important functions are:
+
 Function: insert_text_into_table
 
 Inputs:
