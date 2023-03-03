@@ -25,7 +25,7 @@ def list_module_functions(file_name):
 
 #test
 print("""
-for function in list_module_functions('/content/pdf_generator/sql_core.py'):
+for function in list_module_functions('/content/str_to_pdf/sql_core.py'):
     print(function)
     """
 )
