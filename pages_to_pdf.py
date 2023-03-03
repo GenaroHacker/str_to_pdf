@@ -79,12 +79,8 @@ def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=1,coeficient=0
                 #split
                 from str_to_block import split_string
                 block = split_string(random_tuple[2],600)
-                from random import random
-                ran_var = random(0,1)
-                if ran_var == 0:
-                    block = [empty_text(line,coeficient) for line in block]
-                else:
-                    block = [line for line in block]
+                #empty text with coeficient 0.5
+                block = [empty_text(line,coeficient) for line in block]
             page.append(block)
         pages.append(page)
     return pages
