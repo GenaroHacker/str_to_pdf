@@ -47,7 +47,19 @@ def pages_to_pdf(pages,output_file_name):
         c.showPage()
     c.save()
     
-def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=1):
+#The function empty text recibes a text and erase some words replacyng its characters for spacebars
+def empty_text(text,coeficient):
+    import random
+    new_text = ""
+    words = text.split()
+    for word in words:
+        if random.random() < coeficient:
+            new_text += " "*len(word)
+        else:
+            new_text += word
+        new_text += " "
+    return new_text
+def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=1,coeficient=0.5):
     from random import choice
     pages = []
     for i in range(amount_of_pages):
@@ -61,14 +73,14 @@ def list_of_tuples_to_pages(list_of_tuples, tags, amount_of_pages=1):
             for tuple in list_of_tuples:
                 if tuple[1] == random_tag:
                     filtered_list_of_tuples.append(tuple)
-            print(filtered_list_of_tuples)
             #choice
             if len(filtered_list_of_tuples) > 0:
                 random_tuple = choice(filtered_list_of_tuples)
-                print(random_tuple)
                 #split
                 from str_to_block import split_string
                 block = split_string(random_tuple[2],600)
+                #empty text with coeficient 0.5
+                block = [empty_text(line,coeficient) for line in block]
             page.append(block)
         pages.append(page)
     return pages
