@@ -1,4 +1,4 @@
-To start just run the colab notebook.
+To use just run the colab notebook main.ipynb and run all cells.
 The important functions are:
 
 Function: insert_text_into_table
